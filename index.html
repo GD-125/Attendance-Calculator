@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance Tracker | Dev Queens</title>
+    <!-- Prevent Clickjacking -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <!-- Disable content sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="no-referrer">
+    <!-- Content Security Policy (Basic Example) -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; object-src 'self';"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Attendance Tracker</h1>
+        </header>
+
+        <section class="info-section">
+            <h2>What is an Attendance Tracker?</h2>
+            <p> ✨ The Smart Attendance Tracker is a digital tool designed to help students and professionals monitor and
+                manage their attendance records efficiently. </p>
+            <p> ✨ Calculates attendance percentages, provides status updates, and offers guidance on how to improve
+                attendance when needed.</p>
+            <p> ✨ Regular attendance is crucial for academic success and professional development.</p>
+            <p> ✨ With this tracker, you can ensure you're meeting the required attendance thresholds for your courses
+                or workplace commitments.</p>
+        </section>
+
+        <div class="tracker-section">
+            <div class="input-area">
+                <h2>Enter Your Attendance Data</h2>
+                <div class="form-group">
+                    <label for="totalClasses">Total Classes</label>
+                    <input type="number" id="totalClasses" min="1" value="0"
+                        placeholder="Enter total number of classes">
+                </div>
+                <div class="form-group">
+                    <label for="attendedClasses">Attended Classes</label>
+                    <input type="number" id="attendedClasses" min="0" value="0"
+                        placeholder="Enter number of classes attended">
+                </div>
+                <button onclick="calculateAttendance()">Calculate Attendance</button>
+            </div>
+
+            <div class="result-area">
+                <h2>Attendance Results</h2>
+                <div class="result-card">
+                    <h3>Your Current Attendance</h3>
+                    <div class="attendance-display" id="attendanceDisplay">
+                        <span class="attendance-trophy" id="attendanceTrophy">🏆</span>
+                        <span id="attendancePercentage">--</span>
+                    </div>
+                    <div class="status-message" id="statusMessage">
+                        Enter your attendance data to see results.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <div class="contact-left">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-content">
+                    <h3>Have any queries?</h3>
+                    <p>We're here to help you!</p>
+                </div>
+            </div>
+            <a href="mailto:techy5788@gmail.com" class="contact-button">
+                Send an email: techy5788@gmail.com
+            </a>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p>Designed and Developed by <span class="highlight">DevQueens</span></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

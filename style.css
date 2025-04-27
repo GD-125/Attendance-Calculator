@@ -1,0 +1,499 @@
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4fc3dc;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --warning: #ffc107;
+            --warning-orange: #fd7e14;
+            --danger: #dc3545;
+            --danger-light: #ff6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            font-size: 1.35rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 21px;
+            flex: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            color: var(--light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(79, 195, 220, 0.5), 0 0 10px rgba(79, 195, 220, 0.5);
+            }
+
+            to {
+                text-shadow: 0 0 10px rgba(79, 195, 220, 0.8), 0 0 20px rgba(79, 195, 220, 0.8), 0 0 30px rgba(79, 195, 220, 0.6);
+            }
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: justify;
+        }
+
+        .info-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-section h2 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .info-section h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+            bottom: -5px;
+            left: 0;
+            border-radius: 3px;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .tracker-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .input-area,
+        .result-area {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.6rem;
+        }
+
+        .input-area:hover,
+        .result-area:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(79, 195, 220, 0.3);
+        }
+
+        button {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 195, 220, 0.3);
+            width: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 195, 220, 0.4);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .result-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--light);
+        }
+
+        .attendance-display {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .attendance-display.excellent {
+            color: #2ecc71;
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+        }
+
+        .attendance-display.good {
+            color: #3498db;
+        }
+
+        .attendance-display.average {
+            color: #f39c12;
+        }
+
+        .attendance-display.warning {
+            color: #e67e22;
+        }
+
+        .attendance-display.danger {
+            color: #e74c3c;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+
+        .status-message {
+            font-size: 1.4rem;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .attendance-trophy {
+            font-size: 2rem;
+            margin-right: 10px;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .attendance-trophy.show {
+            opacity: 1;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -4px;
+            background: rgba(79, 195, 220, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(79, 195, 220, 0.5), inset 0 0 10px rgba(79, 195, 220, 0.2);
+            animation: rise 6s infinite ease-in;
+            z-index: -1;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-800px) scale(2);
+                opacity: 0;
+            }
+        }
+
+        .contact-section {
+            background: rgba(31, 41, 70, 0.9);
+            border-radius: 15px;
+            padding: 25px 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+            /* Ensure this matches the width of your attendance sections */
+            max-width: calc(50% - 15px); /* Adjust this value based on your layout */
+        }
+        
+        .contact-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: rgb(79, 195, 220);
+            background: rgba(79, 195, 220, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .contact-content {
+            text-align: left;
+        }
+        
+        .contact-content h3 {
+            color: rgb(79, 195, 220);
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .contact-content p {
+            color: #ffffff;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .contact-button {
+            background: linear-gradient(to right, rgb(79, 195, 220), rgb(79, 195, 220));
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        
+        .contact-button:hover {
+            background: rgb(61, 177, 202);
+        }
+        
+        /* Position the contact section correctly */
+        .page-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Adjust to match the gap between your attendance sections */
+            justify-content: space-between;
+        }
+        
+        .attendance-section, .contact-section {
+            flex: 1 1 calc(50% - 15px); /* Each takes roughly half the container width minus gap */
+            min-width: 300px; /* Adjust based on your layout needs */
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .attendance-section, .contact-section {
+                flex: 1 1 100%; /* Full width on smaller screens */
+            }
+            
+            .contact-section {
+                padding: 20px;
+                flex-direction: column;
+                text-align: center;
+                max-width: 100%;
+            }
+            
+            .contact-left {
+                flex-direction: column;
+                margin-bottom: 15px;
+            }
+            
+            .contact-content {
+                text-align: center;
+            }
+            
+            .contact-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer p {
+            font-size: 2rem;
+            margin: 0;
+            color: #e81296;
+            font-weight: 700;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            animation: shimmer 3s infinite linear;
+            background: linear-gradient(90deg,
+                    transparent 25%,
+                    rgba(73, 203, 232, 0.7) 50%,
+                    transparent 75%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(74, 210, 240, 0.3);
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -100% 0;
+            }
+
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .tracker-section {
+                flex-direction: column;
+            }
+
+            .input-area,
+            .result-area {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .info-section,
+            .input-area,
+            .result-area {
+                padding: 15px;
+            }
+
+            .attendance-display {
+                font-size: 2rem;
+                height: 100px;
+            }
+        }
